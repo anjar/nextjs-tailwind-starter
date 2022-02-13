@@ -1,5 +1,5 @@
 import { useTheme } from 'next-themes';
-import {SunFill, MoonFill} from '@emotion-icons/bootstrap';
+import { SunFill, MoonFill } from '@emotion-icons/bootstrap';
 
 const DarkModeButton = () => {
   const { theme, setTheme } = useTheme();
