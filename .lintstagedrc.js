@@ -5,6 +5,12 @@ const buildEslintCommand = (filenames) =>
     .map((f) => path.relative(process.cwd(), f))
     .join(' --file ')}`
 
+const jestCommand = (filenames) =>
+`jest --watchAll=false --findRelatedTests --passWithNoTests ${filenames
+  .map((f) => path.relative(process.cwd(), f))
+  .join(' --file ')}`
+
+
 module.exports = {
-  '*.{js,jsx,ts,tsx}': [buildEslintCommand],
+  '*.{js,jsx,ts,tsx}': [buildEslintCommand, jestCommand],
 }
